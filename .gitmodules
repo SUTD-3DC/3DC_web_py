@@ -1,0 +1,3 @@
+[submodule "db_models"]
+	path = db_models
+	url = https://github.com/SUTD-3DC/db_models.git
