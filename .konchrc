@@ -9,12 +9,12 @@ import db_models
 #   'context_format', 'ipy_extensions', 'ipy_autoreload',
 #   'ipy_colors', 'ipy_highlighting_style'
 curr_app = make_app()
-model_instance_list = [models.__dict__.get(a) for a in dir(models) if isinstance(models.__dict__.get(a), _BoundDeclarativeMeta)]
+model_instance_list = [db_models.__dict__.get(a) for a in dir(db_models) if isinstance(db_models.__dict__.get(a), _BoundDeclarativeMeta)]
 model_context_dict = {x.__name__: x for x in model_instance_list}
 
 context_dict = {
     'app': curr_app,
-    'db': models.db
+    'db': db_models.db
 }
 context_dict.update(model_context_dict)
 konch.config({
