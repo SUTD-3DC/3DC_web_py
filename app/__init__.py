@@ -4,7 +4,7 @@ import logging.handlers
 from flask import Flask
 from flask_session import Session
 
-from models import db
+from db_models import db
 
 sess = Session()
 
