@@ -1,6 +1,6 @@
 import konch
 
-from flask_sqlalchemy import _BoundDeclarativeMeta
+from flask_sqlalchemy import DefaultMeta
 
 from app import make_app
 import db_models
@@ -9,7 +9,7 @@ import db_models
 #   'context_format', 'ipy_extensions', 'ipy_autoreload',
 #   'ipy_colors', 'ipy_highlighting_style'
 curr_app = make_app()
-model_instance_list = [db_models.__dict__.get(a) for a in dir(db_models) if isinstance(db_models.__dict__.get(a), _BoundDeclarativeMeta)]
+model_instance_list = [db_models.__dict__.get(a) for a in dir(db_models) if isinstance(db_models.__dict__.get(a), DefaultMeta)]
 model_context_dict = {x.__name__: x for x in model_instance_list}
 
 context_dict = {
