@@ -5,3 +5,6 @@
 # Ignore useless config file
 *.DS_Store
 .vscode/*
+
+# Others
+flask_session/
