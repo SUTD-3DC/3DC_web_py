@@ -10,7 +10,7 @@ sess = Session()
 
 
 def make_app(config='config.py'):
-    app = Flask(__name__, template_folder='static')
+    app = Flask(__name__, template_folder='frontend')
     app.config.from_pyfile(config)
 
     # LOGGING CONSTANTS
