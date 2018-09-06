@@ -1,7 +1,7 @@
 ### Before development - Local
 1. Create a project folder.
 2. Go inside the project folder.
-3. Cloning the repo `git clone https://github.com/SUTD-3DC/3DC_web_py.git`, you may use the Gitkraken to do the cloning.
+3. Cloning the repo `git clone --recursive https://github.com/SUTD-3DC/3DC_web_py.git`.
 * Below are based on unix command
 4. Install virtual environment by running `sudo pip3 install virtualenv`.
 5. Create virtual environment with `virtualenv -p python3 venv`.
