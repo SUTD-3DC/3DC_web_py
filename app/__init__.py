@@ -10,7 +10,9 @@ sess = Session()
 
 
 def make_app(config='config.py'):
-    app = Flask(__name__, template_folder='frontend')
+    app = Flask(__name__,
+                static_folder='frontend/dist/static',
+                template_folder='frontend/dist')
     app.config.from_pyfile(config)
 
     # LOGGING CONSTANTS
@@ -24,11 +26,8 @@ def make_app(config='config.py'):
     db.init_app(app)
     sess.init_app(app)
 
-    # BLUEPRINTS - Use absolute path
-    # e.g from app.modules import core
-
-    # REGISTER BLUEPRINTS
-    # e.g app.register.blueprint(core.module)
+    from app.modules import core
+    app.register_blueprint(core.module)
 
     return app
 
